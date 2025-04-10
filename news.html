@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <title>News - CalcGuard Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hamburger-menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="site-header__logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/calcguard-logo.png" alt="CalcGuard Logo" class="logo-image" />
+                    </a>
+                </div>
+                <nav class="site-header__nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="news.html" class="active">News</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <div class="site-header__actions">
+                    <button class="button button--primary get-started-button">Get Started</button>
+                    <button class="button button--icon search-button" aria-label="Open Search">
+                        <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" /></svg>
+                    </button>
+                    <!-- Palantir-style hamburger menu -->
+                    <button class="button button--icon menu-button" aria-label="Toggle Menu" id="menuToggle">
+                        <div class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-content content-section">
+            <div class="container">
+                <h1 class="section-title">CalcGuard & Industry News</h1>
+                <p class="section-subtitle">Stay updated with the latest developments from CalcGuard and the fintech industry.</p>
+                
+                <!-- News Content Placeholder -->
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h3>Content Coming Soon...</h3>
+                        <p>We're preparing a collection of news, announcements, and industry insights. Check back soon for updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--logo-contact">
+                    <div class="footer__logo">
+                        <a href="index.html">
+                            <img src="assets/calcguard-logo.png" alt="CalcGuard Logo" />
+                        </a>
+                    </div>
+                    <div class="footer__contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            CalcGuard Technologies, Inc.<br>
+                            <a href="mailto:contact@calcguard.com">contact@calcguard.com</a><br>
+                            <a href="tel:312-763-5591">tel: 312-763-5591 ext. 5</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__section footer__section--links">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="news.html">News</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <script>document.write(new Date().getFullYear())</script> CalcGuard Technologies, Inc. All rights reserved.</p>
+                <div class="footer__legal-links">
+                    <!-- Add links if needed -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
+            <path fill-rule="evenodd" d="M12 21.75a.75.75 0 01-.75-.75V6.81l-6.22 6.22a.75.75 0 11-1.06-1.06l7.5-7.5a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12.75 6.81v14.19a.75.75 0 01-.75.75z" clip-rule="evenodd" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>
