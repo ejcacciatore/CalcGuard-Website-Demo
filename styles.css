@@ -1261,7 +1261,7 @@ p {
     height: 20px;
 }
 
-/* Responsive adjustments */
+    /* Responsive adjustments */
 @media (max-width: 768px) {
     .social-links {
         justify-content: center;
@@ -1270,4 +1270,229 @@ p {
     .footer__section--social h4 {
         text-align: center;
     }
+}
+    /* Palantir-Style Hover Effects - Add to styles.css */
+
+/* 1. Subtle scale effect for navigation links */
+.nav-links a {
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px) scale(1.05);
+    color: var(--color-primary);
+}
+
+/* 2. Text glow effect for primary buttons and headings */
+.text-glow-hover {
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.text-glow-hover:hover {
+    color: var(--color-primary);
+    text-shadow: 0 0 8px rgba(0, 196, 180, 0.4);
+}
+
+/* 3. Sophisticated underline animation for navigation */
+.nav-underline {
+    position: relative;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+.nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-underline:hover::after {
+    width: 100%;
+}
+
+/* 4. Word-by-word hover effect (for headings or special text) */
+.word-hover {
+    display: inline-block;
+}
+
+.word-hover span {
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), 
+                color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: bottom center;
+}
+
+.word-hover:hover span {
+    color: var(--color-primary);
+}
+
+.word-hover span:hover {
+    transform: translateY(-2px) scale(1.15);
+    color: var(--color-primary);
+}
+
+/* 5. Background fill animation (Palantir uses this for buttons) */
+.bg-fill-hover {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.35s ease;
+}
+
+.bg-fill-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bg-fill-hover:hover {
+    color: var(--color-background-dark);
+}
+
+.bg-fill-hover:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 6. Letter spacing animation for subtle attention */
+.letter-spacing-hover {
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.letter-spacing-hover:hover {
+    letter-spacing: 0.02em;
+    color: var(--color-primary);
+}
+
+/* 7. Gradient text effect on hover (similar to Palantir accents) */
+.gradient-text-hover {
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.gradient-text-hover:hover {
+    color: transparent;
+    background-image: linear-gradient(135deg, var(--color-primary) 0%, #4A90E2 100%);
+}
+
+/* 8. Card hover effect with subtle border and shadow */
+.palantir-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.palantir-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-primary);
+}
+
+.palantir-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 196, 180, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.palantir-card:hover::after {
+    opacity: 1;
+}
+    
+/* CSS for Option 1: Video as Full Hero Background */
+.hero-video-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero__video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(17, 24, 39, 0.85) 0%, 
+        rgba(17, 24, 39, 0.7) 50%, 
+        rgba(17, 24, 39, 0.9) 100%);
+}
+
+/* CSS for Option 2: Video as Section Divider */
+.video-divider {
+    position: relative;
+    height: 30vh;
+    min-height: 300px;
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.divider-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.divider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.5);
+}
+
+/* CSS for Option 3: Video in Graph Visualization Section */
+.graph-video-container {
+    width: 100%;
+    height: 300px;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-border);
+}
+
+.graph-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }

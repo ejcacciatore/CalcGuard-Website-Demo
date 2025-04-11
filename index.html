@@ -20,21 +20,21 @@
                 </div>
                 <nav class="site-header__nav">
                     <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="#graph-visualization">Platform UI</a></li>
-                        <li><a href="#overview">Overview</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#security">Security</a></li>
-                        <li><a href="#technical">Technical</a></li>
+                        <li><a href="index.html" class="nav-underline">Home</a></li>
+                        <li><a href="blog.html" class="nav-underline">Blog</a></li>
+                        <li><a href="news.html" class="nav-underline">News</a></li>
+                        <li><a href="#graph-visualization" class="nav-underline">Platform UI</a></li>
+                        <li><a href="#overview" class="nav-underline">Overview</a></li>
+                        <li><a href="#features" class="nav-underline">Features</a></li>
+                        <li><a href="#security" class="nav-underline">Security</a></li>
+                        <li><a href="#technical" class="nav-underline">Technical</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="header-right">
                 <div class="site-header__actions">
-                    <button class="button button--primary get-started-button">Get Started</button>
+                    <button class="button button--primary bg-fill-hover get-started-button">Get Started</button>
                     <button class="button button--icon search-button" aria-label="Open Search">
                         <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" /></svg>
                     </button>
@@ -55,11 +55,23 @@
         <section class="hero">
             <div class="hero__background"></div>
             <div class="container hero__container">
-                <div class="hero__content">
-                    <h1 class="hero__title">Seamless Data & Analytics Connectivity to Power <span>B2B Innovation</span></h1>
-                    <p class="hero__subtitle">CalcGuard Technologies helps the buy-side gain deeper insights into order flow management and execution results, driving more informed conversations and better outcomes.</p>
-                    <a href="#signup" class="button button--primary hero__cta-button">Request a Demo</a>
+                <div class="hero__content-wrapper">
+                    <!-- Left side: Content -->
+                    <div class="hero__content">
+                        <h1 class="hero__title word-hover">Seamless Data & Analytics Connectivity to Power <span>B2B Innovation</span></h1>
+                        <p class="hero__subtitle text-glow-hover">CalcGuard Technologies helps the buy-side gain deeper insights into order flow management and execution results, driving more informed conversations and better outcomes.</p>
+                        <a href="#signup" class="button button--primary bg-fill-hover hero__cta-button">Request a Demo</a>
+                    </div>
+                    
+                    <!-- Right side: Video -->
+                    <div class="hero__video-container">
+                        <video class="hero__video" autoplay loop muted playsinline>
+                            <source src="assets/20250410_2043_Futuristic Data Symphony_remix_01jrh4v3ecewybpzdbsy98hzht_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
+                
                 <a href="#graph-visualization" class="hero__scroll-down" aria-label="Scroll down">
                     <svg class="icon icon-arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v16.19l6.22-6.22a.75.75 0 111.06 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06l6.22 6.22V3a.75.75 0 01.75-.75z" clip-rule="evenodd" /></svg>
                 </a>
@@ -68,7 +80,7 @@
 
         <section id="graph-visualization" class="graph-section content-section">
             <div class="container">
-                <h2 class="section-title">Platform UI Example</h2>
+                <h2 class="section-title gradient-text-hover">Platform UI Example</h2>
                 <p class="section-subtitle">Sequential network graph of venue route conversion and execution quality.</p>
                 <div id="cy" class="graph-container"></div>
             </div>
@@ -76,19 +88,19 @@
 
         <section id="overview" class="overview-section content-section">
             <div class="container">
-                <h2 class="section-title">CalcGuard Broker Overview</h2>
+                <h2 class="section-title gradient-text-hover">CalcGuard Broker Overview</h2>
                 <p class="section-subtitle">Streamlining data and analytics for effortless access to key insights, enabling smarter decisions and simplifying B2B interactions.</p>
                 <div class="overview__grid">
-                    <div class="overview__item">
-                        <h3>Secure Data Handling</h3>
+                    <div class="overview__item palantir-card">
+                        <h3 class="text-glow-hover">Secure Data Handling</h3>
                         <p>Collect and transmit data flows securely, never accessing client data, ensuring strict boundaries and confidentiality.</p>
                     </div>
-                    <div class="overview__item">
-                        <h3>Actionable Insights</h3>
+                    <div class="overview__item palantir-card">
+                        <h3 class="text-glow-hover">Actionable Insights</h3>
                         <p>Flexible, iterative report generation tools integrate the latest insights into strategic planning and enhance communication.</p>
                     </div>
-                    <div class="overview__item">
-                        <h3>Collaborative Value</h3>
+                    <div class="overview__item palantir-card">
+                        <h3 class="text-glow-hover">Collaborative Value</h3>
                         <p>Enhance client understanding of execution services, foster collaboration, and solidify your role as a trusted advisor.</p>
                     </div>
                 </div>
@@ -97,23 +109,23 @@
 
         <section id="features" class="features-section content-section alternate-bg">
             <div class="container">
-                <h2 class="section-title">Key Platform Features</h2>
+                <h2 class="section-title gradient-text-hover">Key Platform Features</h2>
                 <p class="section-subtitle">Delivering seamless connectivity and a secure, dependable infrastructure layer within the data ecosystem.</p>
                 <div class="features-grid">
-                    <div class="feature-item">
-                        <h3 class="feature-item__title">Client-Controlled Connectivity</h3>
+                    <div class="feature-item palantir-card">
+                        <h3 class="feature-item__title text-glow-hover">Client-Controlled Connectivity</h3>
                         <p>End-to-end data and analytics connectivity, providing a dependable infrastructure layer.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3 class="feature-item__title">Sightless Operation</h3>
+                    <div class="feature-item palantir-card">
+                        <h3 class="feature-item__title text-glow-hover">Sightless Operation</h3>
                         <p>Securely transmit data without accessing it, ensuring clients retain full control over analytics and compliance.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3 class="feature-item__title">IMAC Driven</h3>
+                    <div class="feature-item palantir-card">
+                        <h3 class="feature-item__title text-glow-hover">IMAC Driven</h3>
                         <p>Industry expert guidance builds a robust data fabric, normalization system, and computational engine.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3 class="feature-item__title">Secure Innovation Hub</h3>
+                    <div class="feature-item palantir-card">
+                        <h3 class="feature-item__title text-glow-hover">Secure Innovation Hub</h3>
                         <p>Zero-trust spheres optimized for deploying AI, machine learning, and advanced graph algorithms securely.</p>
                     </div>
                 </div>
@@ -122,19 +134,19 @@
 
         <section id="security" class="security-section content-section">
             <div class="container">
-                <h2 class="section-title">Zero-Trust Automation & Security</h2>
+                <h2 class="section-title gradient-text-hover">Zero-Trust Automation & Security</h2>
                 <p class="section-subtitle">Efficiently gathering, analyzing, and protecting sensitive order event data through secure, automated processes.</p>
                 <div class="security-grid">
-                    <div class="security-item">
-                        <h3>Single-Tenant Vaults</h3>
+                    <div class="security-item palantir-card">
+                        <h3 class="text-glow-hover">Single-Tenant Vaults</h3>
                         <p>Individually optimized, zero-trust, single-tenant vaults deliver the highest level of data security for each client.</p>
                     </div>
-                    <div class="security-item">
-                        <h3>Continuous Compliance</h3>
+                    <div class="security-item palantir-card">
+                        <h3 class="text-glow-hover">Continuous Compliance</h3>
                         <p>Automated SOC 2 & ISO 27001 tracking ensures real-time monitoring, efficient evidence collection, and data leak prevention.</p>
                     </div>
-                    <div class="security-item">
-                        <h3>Sightless Neutrality</h3>
+                    <div class="security-item palantir-card">
+                        <h3 class="text-glow-hover">Sightless Neutrality</h3>
                         <p>Commitment to privacy ensures CalcGuard remains 'sightless' to data operations, reinforcing our neutral provider role.</p>
                     </div>
                 </div>
@@ -143,19 +155,19 @@
 
         <section id="technical" class="technical-section content-section alternate-bg">
             <div class="container">
-                <h2 class="section-title">Technical Overview</h2>
+                <h2 class="section-title gradient-text-hover">Technical Overview</h2>
                 <p class="section-subtitle">Adaptable options for data content, formats, and transfer methods to eliminate technical obstacles and security gaps.</p>
                 <div class="technical-grid">
-                    <div class="technical-item">
-                        <h3>Flexible Data Integration</h3>
+                    <div class="technical-item palantir-card">
+                        <h3 class="text-glow-hover">Flexible Data Integration</h3>
                         <p>Adapts to Broker-Client dynamics, supporting diverse formats (extracts, streaming) and accommodating new data types.</p>
                     </div>
-                    <div class="technical-item">
-                        <h3>Secure Transfer Methods</h3>
+                    <div class="technical-item palantir-card">
+                        <h3 class="text-glow-hover">Secure Transfer Methods</h3>
                         <p>Offers secure SFTP, drop-copy, CGConnector streaming, and automated CGFIXConnector solutions, eliminating risks.</p>
                     </div>
-                    <div class="technical-item">
-                        <h3>Robust Normalization</h3>
+                    <div class="technical-item palantir-card">
+                        <h3 class="text-glow-hover">Robust Normalization</h3>
                         <p>Metadata-driven CGNormalizer builds a unified Order Event Domain Model (OEDM) within each client's zero-trust vault.</p>
                     </div>
                 </div>
@@ -164,21 +176,21 @@
 
         <section id="fix-news" class="fix-news-section content-section">
             <div class="container">
-                <h2 class="section-title">FIX Trading Community & News</h2>
+                <h2 class="section-title gradient-text-hover">FIX Trading Community & News</h2>
                 <p class="section-subtitle">Stay updated with the latest developments in the FIX protocol ecosystem.</p>
                 <div class="fix-news-content">
-                    <div class="fix-official-link">
-                        <h3>Official Resources</h3>
+                    <div class="fix-official-link palantir-card">
+                        <h3 class="text-glow-hover">Official Resources</h3>
                         <p>Visit the official FIX Trading Community website for standards, events, and resources:</p>
-                        <a href="https://www.fixtrading.org/" target="_blank" rel="noopener noreferrer" class="button button--secondary">FIX Trading Community</a>
+                        <a href="https://www.fixtrading.org/" target="_blank" rel="noopener noreferrer" class="button button--secondary bg-fill-hover">FIX Trading Community</a>
                     </div>
-                    <div class="fix-news-search">
-                        <h3>FIX Protocol News Search</h3>
+                    <div class="fix-news-search palantir-card">
+                        <h3 class="text-glow-hover">FIX Protocol News Search</h3>
                         <p>Search recent FIX protocol news on Google:</p>
                         <form id="fix-search-form" class="search-form-inline">
                             <label for="fix-search-input" class="visually-hidden">FIX News Search Query</label>
                             <input type="search" id="fix-search-input" placeholder="Enter keywords..." required>
-                            <button type="submit" class="button button--primary" aria-label="Search FIX News">Search</button>
+                            <button type="submit" class="button button--primary bg-fill-hover" aria-label="Search FIX News">Search</button>
                         </form>
                     </div>
                 </div>
@@ -187,7 +199,7 @@
 
         <section id="signup" class="signup-section content-section alternate-bg">
             <div class="container signup-container">
-                <h2 class="section-title">Learn More About CalcGuard</h2>
+                <h2 class="section-title gradient-text-hover">Learn More About CalcGuard</h2>
                 <p class="section-subtitle">Sign up for updates, insights, and information on how CalcGuard can benefit your organization.</p>
                 <form id="signup-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
                     <div class="form-group">
@@ -203,7 +215,7 @@
                         <input type="text" id="signup-company" name="company" placeholder="Your Company (Optional)">
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="button button--primary">Sign Up</button>
+                        <button type="submit" class="button button--primary bg-fill-hover">Sign Up</button>
                     </div>
                 </form>
                 <p class="form-note">We respect your privacy.</p>
@@ -222,13 +234,35 @@
         <div class="container footer-container">
             <div class="footer__content">
                 <div class="footer__section footer__section--logo-contact">
-                    <!-- Logo and contact info -->
+                    <div class="footer__logo">
+                        <a href="index.html">
+                            <img src="assets/calcguard-logo.png" alt="CalcGuard Logo" />
+                        </a>
+                    </div>
+                    <div class="footer__contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            CalcGuard Technologies, Inc.<br>
+                            <a href="mailto:contact@calcguard.com" class="nav-underline">contact@calcguard.com</a><br>
+                            <a href="tel:312-763-5591" class="nav-underline">tel: 312-763-5591 ext. 5</a>
+                        </p>
+                    </div>
                 </div>
                 <div class="footer__section footer__section--links">
-                    <!-- Quick links -->
+                    <h4>Quick Links</h4>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html" class="nav-underline">Home</a></li>
+                            <li><a href="blog.html" class="nav-underline">Blog</a></li>
+                            <li><a href="news.html" class="nav-underline">News</a></li>
+                            <li><a href="#overview" class="nav-underline">Overview</a></li>
+                            <li><a href="#features" class="nav-underline">Features</a></li>
+                            <li><a href="#security" class="nav-underline">Security</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 
-                <!-- ADD THE SOCIAL MEDIA SECTION HERE -->
+                <!-- Social Media Section -->
                 <div class="footer__section footer__section--social">
                     <h4>Connect With Us</h4>
                     <div class="social-links">
@@ -259,6 +293,7 @@
             </div>
         </div>
     </footer>
+    
     <!-- Mobile menu overlay -->
     <div class="mobile-menu-overlay"></div>
 

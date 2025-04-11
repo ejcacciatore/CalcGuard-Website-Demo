@@ -198,4 +198,112 @@ function initializeCytoscapeGraph() {
     } catch (error) {
         console.error('Error initializing Cytoscape graph:', error);
     }
+// Add to your script.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Word-by-word hover effect implementation
+    const wordHoverElements = document.querySelectorAll('.word-hover');
+    
+    wordHoverElements.forEach(element => {
+        // Get the text content
+        const text = element.textContent;
+        // Clear the element
+        element.textContent = '';
+        
+        // Split text into words and wrap each in a span
+        const words = text.split(' ');
+        words.forEach((word, index) => {
+            // Create outer span for each word
+            const wordSpan = document.createElement('span');
+            wordSpan.style.display = 'inline-block';
+            
+            // Split the word into characters
+            const chars = word.split('');
+            chars.forEach(char => {
+                // Create a span for each character
+                const charSpan = document.createElement('span');
+                charSpan.textContent = char;
+                wordSpan.appendChild(charSpan);
+            });
+            
+            // Add the word to the element
+            element.appendChild(wordSpan);
+            
+            // Add space after each word except the last one
+            if (index < words.length - 1) {
+                element.appendChild(document.createTextNode(' '));
+            }
+        });
+    });
+    
+    // 2. Add scroll-triggered animations for sections
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the in-view class when the section becomes visible
+                entry.target.classList.add('in-view');
+                
+                // For section with word-hover effects, add additional animation
+                const wordHovers = entry.target.querySelectorAll('.word-hover');
+                wordHovers.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('active');
+                    }, index * 150); // Staggered delay
+                });
+                
+                // Stop observing after animation
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+        sectionObserver.observe(section);
+    });
+    
+    // 3. Update back-to-top button visibility
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    }
+    
+    // 4. Add active state to nav links based on scroll position
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+    
+    function highlightNavLink() {
+        let scrollPosition = window.scrollY;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavLink);
+    highlightNavLink(); // Call once to set initial state
+});
 }
