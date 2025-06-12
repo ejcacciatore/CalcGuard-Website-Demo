@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcGuard: Re-architecting CAT</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script>
+        // Custom colors for Tailwind to match the design
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0D1117',
+                        'brand-dark-secondary': '#161B22',
+                        'brand-accent': '#20C59B',
+                        'brand-accent-hover': '#1DB189',
+                        'brand-light': '#F0F6FC',
+                        'brand-secondary-text': '#8B949E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles to supplement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #0D1117; /* brand-dark */
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #161B22; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8B949E; }
+        /* Animation setup */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-light">
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero-logo flex justify-left items-center p-6 bg-brand-dark">
+            <img src="public/vite.svg" alt="CalcGuard Logo" width="19" height="19" class="inline-block" style="width:30px; height:30px;" />
+        </div>
+        <section class="py-25 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                    Re-architecting CAT: From Centralized Cost Sink <br class="hidden md:block"> to 
+                    <span class="text-brand-accent">Federated Utility</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- Core Challenges Section -->
+        <section id="challenges" class="py-24 bg-brand-dark-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Addressing the Core Challenges of CAT</h2>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    <!-- Challenge 1 -->
+                    <div class="fade-in-section">
+                        <h3 class="text-xl font-semibold text-brand-accent">Ballooning Costs & Unclear Budgeting</h3>
+                        <p class="mt-2 text-brand-secondary-text">
+                            A federated node architecture allows participants to share costs, distribute compute loads, and perform modular infrastructure upgrades.
+                        </p>
+                    </div>
+                    <!-- Challenge 2 -->
+                    <div class="fade-in-section">
+                        <h3 class="text-xl font-semibold text-brand-accent">Uncontrolled Scope Creep</h3>
+                        <p class="mt-2 text-brand-secondary-text">
+                            This model enforces strict, role-based data access with versioned APIs. New data fields must pass defined schemas, preventing uncontrolled add-ons.
+                        </p>
+                    </div>
+                    <!-- Challenge 3 -->
+                    <div class="fade-in-section">
+                        <h3 class="text-xl font-semibold text-brand-accent">Lack of Industry Governance</h3>
+                        <p class="mt-2 text-brand-secondary-text">
+                            A new governance model allows regulated participants and SROs to share oversight through transparent, auditable logs and stakeholder voting mechanisms.
+                        </p>
+                    </div>
+                    <!-- Challenge 4 -->
+                    <div class="fade-in-section">
+                        <h3 class="text-xl font-semibold text-brand-accent">Opaque Decision-Making</h3>
+                        <p class="mt-2 text-brand-secondary-text">
+                            An open-source architecture with immutable audit logs and modular transparency layers provides clear visibility for the SEC, FINRA, and all participants.
+                        </p>
+                    </div>
+                    <!-- Challenge 5 -->
+                     <div class="fade-in-section md:col-span-2 text-center mt-6">
+                        <h3 class="text-xl font-semibold text-brand-accent">High TCO & Indirect Costs</h3>
+                        <p class="mt-2 text-brand-secondary-text max-w-2xl mx-auto">
+                            By enabling lightweight deployments for smaller broker-dealers and optimizing data handling, this approach significantly lowers the Total Cost of Ownership (TCO).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Differentiators Section -->
+        <section id="tech" class="py-24 bg-brand-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">
+                        <span class="text-3xl text-brand-accent">🔧</span> Key Technical Differentiators
+                    </h2>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Differentiator 1 -->
+                    <div class="fade-in-section flex items-start gap-5">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-dark-secondary rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#20C59B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Encrypted Trade Lifecycle Graphs</h4>
+                            <p class="mt-1 text-brand-secondary-text">Replaces raw logs with secure, context-rich graphs, enhancing data integrity and privacy.</p>
+                        </div>
+                    </div>
+                     <!-- Differentiator 2 -->
+                    <div class="fade-in-section flex items-start gap-5">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-dark-secondary rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#20C59B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/><circle cx="16.5" cy="7.5" r=".5"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Granular, Permissioned Access</h4>
+                            <p class="mt-1 text-brand-secondary-text">Controls data visibility at the individual event level for regulators, brokers, and exchanges.</p>
+                        </div>
+                    </div>
+                     <!-- Differentiator 3 -->
+                    <div class="fade-in-section flex items-start gap-5">
+                         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-dark-secondary rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#20C59B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren"><path d="M7 12a5 5 0 0 1 5-5v0a5 5 0 0 1 5 5v0a5 5 0 0 1-5 5v0a5 5 0 0 1-5-5Z"/><path d="M5 5h14"/><path d="M5 2h14"/><path d="M12 17v5"/><path d="m7 17-1.03-2.06a2 2 0 0 0-3.41.02l-.24.48a2 2 0 0 0 3.41 3.41l2.06-1.03"/><path d="m17 17 1.03-2.06a2 2 0 0 1 3.41.02l.24.48a2 2 0 0 1-3.41 3.41l-2.06-1.03"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Built-in Surveillance Triggers</h4>
+                            <p class="mt-1 text-brand-secondary-text">Embeds advanced surveillance capabilities like temporal clustering and intent-tagging for proactive oversight.</p>
+                        </div>
+                    </div>
+                     <!-- Differentiator 4 -->
+                    <div class="fade-in-section flex items-start gap-5">
+                         <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-dark-secondary rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#20C59B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-check"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m9 9.5 2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Distributed Compliance Ledger</h4>
+                            <p class="mt-1 text-brand-secondary-text">Shifts auditing from a post-hoc, forensic exercise to a real-time, continuous verification process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Bottom Line Section -->
+        <section id="bottom-line" class="py-24 bg-brand-dark-secondary">
+             <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-8">
+                        <span class="text-4xl">🧭</span> The Bottom Line
+                    </h2>
+                    <p class="text-xl lg:text-2xl text-slate-300 leading-relaxed">
+                        The industry needs a future for the Consolidated Audit Trail that is governed by <span class="text-brand-accent font-semibold">principle-based rules, robust industry engagement,</span> and <span class="text-brand-accent font-semibold">unwavering fiscal discipline.</span>
+                        A decentralized architecture can deliver that future today.
+                    </p>
+                    <p class="mt-8 text-xl lg:text-2xl text-slate-300 leading-relaxed">
+                        This approach provides a clear path to cost-effective compliance, gives the industry a meaningful seat at the governance table, and future-proofs our market's regulatory infrastructure by transitioning it from a centralized compliance burden into a <span class="text-white font-semibold">shared intelligence utility.</span>
+                    </p>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Fade-in Animation on Scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
