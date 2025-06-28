@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcGuard Technologies - Seamless B2B Data & Analytics Connectivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Font: 'Great' */
+        @font-face {
+            font-family: 'Great';
+            src: url('assets/great.woff2') format('woff2'),
+                 url('assets/great.woff') format('woff'),
+                 url('assets/great.ttf') format('truetype'),
+                 url('assets/great.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Base & Typography */
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #ffffff;
+            color: #334155;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400; /* Montserrat Regular */
+        }
+
+        .font-great { font-family: 'Great', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-raleway { font-family: 'Raleway', sans-serif; }
+
+        /* Full-page Scrolling Sections */
+        .full-page-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link.active {
+            color: #ef4444; /* Red accent for active link */
+        }
+        
+        /* Side Dot Navigation */
+        #page-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ef4444;
+            transform: scale(1.2);
+        }
+
+        /* Section Specific Backgrounds */
+        .hero-bg {
+            background-image: url('assets/main_background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .what-we-do-bg-container {
+            background-color: #f8fafc; /* Light grey background */
+        }
+        
+        .what-we-do-bg-image {
+            background-image: url('assets/main_background.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05; 
+        }
+
+        .challenge-bg {
+            background-image: url('assets/3background.png');
+            background-size: cover;
+            background-position: center;
+        }        
+
+        /* General Section & Card Styling */
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1e293b;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #475569;
+            max-width: 650px;
+            margin: 1rem auto 0;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400; /* Regular */
+            text-transform: uppercase;
+            color: #1e293b;
+        }
+
+        /* Leadership cards */
+        .leader-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .leadership-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .full-page-section {
+                min-height: auto;
+                padding: 60px 0;
+            }
+
+            #page-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+   <header class="bg-white/90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div id="nav-links" class="hidden lg:flex items-center flex-wrap space-x-4 text-xs font-semibold uppercase tracking-wider">
+                <a href="#home" data-section="home" class="nav-link text-slate-600 hover:text-red-500">home</a>
+                <a href="#what-we-do" data-section="what-we-do" class="nav-link text-slate-600 hover:text-red-500">What We Do</a>
+                <a href="#challenge" data-section="challenge" class="nav-link text-slate-600 hover:text-red-500">Challenge</a>
+                <a href="#platform" data-section="platform" class="nav-link text-slate-600 hover:text-red-500">Platform</a>
+                <a href="#inefficiencies" data-section="inefficiencies" class="nav-link text-slate-600 hover:text-red-500">Inefficiencies</a>
+                <a href="#trinity" data-section="shortfalls" class="nav-link text-slate-600 hover:text-red-500">trinity</a>
+                <a href="#evidence" data-section="evidence" class="nav-link text-slate-600 hover:text-red-500">evidence</a>
+                <a href="#discovery" data-section="discovery" class="nav-link text-slate-600 hover:text-red-500">Discovery</a>
+                <a href="#analytics" data-section="analytics" class="nav-link text-slate-600 hover:text-red-500">Analytics</a>
+                <a href="#ai-barriers" data-section="ai-barriers" class="nav-link text-slate-600 hover:text-red-500">AI</a>
+                <a href="#competitive-edge" data-section="competitive-edge" class="nav-link text-slate-600 hover:text-red-500">Edge</a>
+                <a href="#leadership" data-section="leadership" class="nav-link text-slate-600 hover:text-red-500">Leadership</a>
+                <a href="#disclaimer" data-section="disclaimer" class="nav-link text-slate-600 hover:text-red-500">Disclaimer</a>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="#home"><img src="assets/CG_1.png" alt="CalcGuard Logo" class="logo-img"></a>
+            </div>
+        </div>
+    </header>
+    
+    <nav id="page-dots">
+        <a href="#home" data-section="home" class="dot"></a>
+        <a href="#what-we-do" data-section="what-we-do" class="dot"></a>
+        <a href="#challenge" data-section="challenge" class="dot"></a>
+        <a href="#platform" data-section="platform" class="dot"></a>
+        <a href="#inefficiencies" data-section="inefficiencies" class="dot"></a>
+        <a href="#trinity" data-section="trinity" class="dot"></a>
+        <a href="#evidence" data-section="evidence" class="dot"></a>
+        <a href="#ai-barriers" data-section="ai-barriers" class="dot"></a>       
+        <a href="#discovery" data-section="discovery" class="dot"></a>
+        <a href="#ai-barriers" data-section="ai-barriers" class="dot"></a>
+        <a href="#competitive-edge" data-section="competitive-edge" class="dot"></a>
+        <a href="#leadership" data-section="leadership" class="dot"></a>
+        <a href="#disclaimer" data-section="disclaimer" class="dot"></a>
+    </nav>
+
+    <main>
+        <section id="home" class="full-page-section hero-bg">
+            <div class="px-6 text-center">
+                <img src="assets/landing page logo.png" alt="CalcGuard Technologies Hero Logo" class="max-w-4xl w-full inline-block">
+            </div>
+        </section>
+
+        <section id="what-we-do" class="full-page-section bg-white overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
+                <div class="flex flex-col justify-center p-8 md:p-16 relative">
+                    <img src="assets/left_cornder.png" alt="corner design" class="absolute top-8 left-8 w-16 md:w-24">
+                    <div class="max-w-md mt-20">
+                        <p class="font-raleway-bold text-sm text-slate-700 uppercase tracking-wider">CalcGuard® Technologies</p>
+                        <h2 class="text-4xl md:text-5xl mt-2 text-slate-800">WHAT<br>WE DO</h2>
+                        <div class="w-20 h-1 bg-red-500 my-6"></div>
+                        <p class="font-raleway text-slate-900 leading-relaxed">
+                            We deliver a scalable B2B platform for secure aggregation, normalization and analysis of sensitive data, empowering organizations with actionable insights.
+                        </p>
+                        <div class="text-center mt-8">
+                            <img src="assets/Full_Control_icon.png" alt="Full Control Icon" class="inline-block h-12 w-auto">
+                        </div>
+                    </div>
+                </div>
+                <div class="relative what-we-do-bg-container">
+                    <div class="absolute inset-0 what-we-do-bg-image"></div>
+                    <div class="relative flex flex-col justify-center h-full pl-8 md:pl-24 pr-8 space-y-8 md:space-y-10">
+                         <div>
+                             <img src="assets/Unify_icon.png" alt="Unified Icon" class="h-12 w-auto mb-3">
+                             <div>
+                                 <h3 class="card-title">UNIFIED, SECURED & CONTROLLED</h3>
+                                 <p class="font-raleway text text-slate-800 mt-2">Our modern architecture unifies fragmented data, empowering organizations to securely harness AI for secure, efficient, low-cost collaboration.</p>
+                             </div>
+                         </div>
+                         <div>
+                             <img src="assets/global_equity_icon.svg" alt="Global Equity Icon" class="h-12 w-auto mb-3">
+                             <div>
+                                 <h3 class="card-title">GLOBAL EQUITY TRADING</h3>
+                                 <p class="font-raleway text text-slate-800 mt-2">Our current focus is global equity markets, providing advanced analytics and data interoperability for institutional investors, brokers and financial service providers.</p>
+                             </div>
+                         </div>
+                         <div>
+                             <img src="assets/adaptive.svg" alt="Adaptable Icon" class="h-12 w-auto mb-3">
+                             <div>
+                                 <h3 class="card-title">ADAPTABLE & EXTENSIBLE</h3>
+                                 <p class="font-raleway text text-slate-800 mt-2">CalcGuard's platform is architected for rapid expansion into adjacent verticals where similar data complexity, privacy and collaboration challenges exist.</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenge" class="full-page-section challenge-bg">
+             <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full items-center">
+                <div class="flex flex-col justify-center p-8 md:p-24 bg-white/90 h-full">
+                    <p class="font-montserrat text-red-600 font-bold uppercase tracking-wider">Accelerate Your AI Journey</p>
+                    <h2 class="section-title mt-2 leading-tight text-4xl">Solving The<br>First Mile, Last Mile<br>Challenge</h2>
+                    <p class="font-raleway text-lg text-slate-600 mt-6 max-w-md">
+                        The first mile and last mile are the hardest-to-solve parts of delivering a complete, usable solution - typically at the points of data ingestion (first mile) and analytics delivery (last mile).
+                    </p>
+                </div>
+                <div class="h-full w-full flex items-center justify-center">
+                     <img src="assets/main_dashboard.png" alt="CalcGuard Platform Visualization" class="w-11/12 h-auto">
+                </div>
+            </div>
+        </section>
+
+        <section id="platform" class="full-page-section bg-gray-100">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/page4_design.png" alt="Platform Design" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+
+        <section id="inefficiencies" class="full-page-section bg-amber-50">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design5.png" alt="Page 5 Design" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+
+        <section id="trinity" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design6.png" alt="Page 6 Design" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+        <section id="evidence" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design7.png" alt="Page 7 Design" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section> 
+        <section id="discovery" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design8.png" alt="Accelerate Discovery" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+         <section id="ai" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design9.png" alt="Accelerate Discovery" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>       
+        <section id="ai-barriers" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design10.png" alt="AI Barriers" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+
+        <section id="competitive-edge" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design11.png" alt="Competitive Edge" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+
+ <!-- Page 12: Leadership -->
+        <section id="leadership" class="full-page-section bg-white">
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-3 gap-8 items-start">
+                    <!-- Left Column: CalcGuard Leaders -->
+                    <div class="flex flex-col justify-between h-full">
+                        <div class="space-y-8 text-center lg:text-right">
+                            <div class="flex flex-col lg:flex-row-reverse items-center justify-end gap-4">
+                                <img src="assets/tim.png" alt="Tim Sargent" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-lg">TIM SARGENT, CEO</h3>
+                                    <p class="text-sm text-slate-600">Founded OSG, sold to IHS Markit, led wall street quant, index and trading groups.</p>
+                                    <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:flex-row-reverse items-center justify-end gap-4">
+                                <img src="assets/jim.png" alt="Jim Northey" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-lg">JIM NORTHEY, CTO</h3>
+                                    <p class="text-sm text-slate-600">FIX co-chair, 3 ISO committees, ex-Itiviti SVP: LaSalle co-founder.</p>
+                                    <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:flex-row-reverse items-center justify-end gap-4">
+                                <img src="assets/enrico.png" alt="Enrico Cacciatore" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-lg">ENRICO CACCIATORE, CPO</h3>
+                                    <p class="text-sm text-slate-600">Ex-Voya quant trading and market structure analytics.</p>
+                                    <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center lg:text-right">
+                            <img src="assets\CG_Leadership.png" alt="IMAC Logo Placeholder" class="inline-block">
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Main Text -->
+                    <div class="text-center py-8 lg:border-l lg:border-r lg:px-8 h-full flex flex-col justify-center">
+                        <p class="text-sm font-semibold uppercase tracking-wider">Focus, Expertise & Accountability</p>
+                        <h2 class="text-3xl font-bold my-4 leading-tight">A LEADERSHIP<br>TRIPLE THREAT</h2>
+                        <div class="w-16 h-1 bg-red-500 mx-auto"></div>
+                        <p class="text-slate-600 my-6 text-sm">We've engineered a leadership triumvirate combining CalcGuard management, industry advisors and an investment management advisory council (IMAC) to ensure broad perspectives and proactively eliminate blind spots.</p>
+                        <p class="text-slate-600 text-sm">The IMAC unifies industry voices to advance transparency, standardize platform definitions, align integration priorities and drive innovation.</p>
+                    </div>
+
+                    <!-- Right Column: Industry Advisors -->
+                     <div class="flex flex-col justify-between h-full">
+                        <div class="space-y-8 text-center lg:text-left">
+                            <div class="flex flex-col lg:flex-row items-center gap-4">
+                                <img src="assets/jeff.png" alt="Jeff Estella" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h3 class="font-bold text-lg">JEFF ESTELLA</h3>
+                                    <p class="text-sm text-slate-600">Senior trading roles at MFS, now advises finance industry.</p>
+                                     <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                             <div class="flex flex-col lg:flex-row items-center gap-4">
+                                 <img src="assets/bill.png" alt="Bill Hartnett" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h3 class="font-bold text-lg">BILL HARTNETT</h3>
+                                    <p class="text-sm text-slate-600">Ex-Citi fintech investor with deep expertise in capital markets digitization.</p>
+                                    <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                             <div class="flex flex-col lg:flex-row items-center gap-4">
+                                 <img src="assets/mark.png" alt="Mark Schaedel" class="w-24 h-auto rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h3 class="font-bold text-lg">MARK SCHAEDEL</h3>
+                                    <p class="text-sm text-slate-600">Leads DataBP: 13 years at NYSE IHS Markit, COBA co-founder.</p>
+                                     <a href="#" class="text-sm text-blue-600 hover:underline">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-24 text-center sm:text-right">
+                            <img src="assets\Indsutry_Leadership.png" alt="Partner Logo Placeholder" class="inline-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="disclaimer" class="full-page-section bg-slate-800">
+            <div class="container mx-auto p-8 text-center">
+                <img src="assets/Page_Design13.png" alt="Competitive Edge" class="max-w-full h-auto inline-block align-middle">
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // JavaScript for active navigation state on scroll and smooth scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.full-page-section');
+            const navLinks = document.querySelectorAll('#nav-links .nav-link');
+            const dots = document.querySelectorAll('#page-dots .dot');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        
+                        // Update nav links
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.dataset.section === sectionId);
+                        });
+
+                        // Update dots
+                        dots.forEach(dot => {
+                            dot.classList.toggle('active', dot.dataset.section === sectionId);
+                        });
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
